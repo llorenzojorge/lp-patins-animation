@@ -25,6 +25,12 @@
   --px-base: 2rem;
 }
 
+@media (width <= 80em) {
+  :root {
+    --px-base: 1.5rem;
+  }
+}
+
 html, button {
   font: 500 1rem/150% "Montserrat", sans-serif;
 }
