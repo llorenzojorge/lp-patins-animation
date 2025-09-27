@@ -46,6 +46,7 @@ header {
 
 @media (width <= 80em) {
   header {
+    max-width: 22rem;
     padding: 0.75rem var(--px-base);
   }
 }

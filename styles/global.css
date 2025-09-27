@@ -27,6 +27,7 @@
 
 @media (width <= 80em) {
   :root {
+    --text-xl: 2rem;
     --px-base: 1.5rem;
   }
 }
