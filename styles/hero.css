@@ -5,6 +5,7 @@ section.hero {
     margin-inline: auto;
     
     display: flex;
+    justify-content: space-between;
     align-items: center;
     
     & h1 {
@@ -25,7 +26,7 @@ section.hero {
 
     & h1 span {
         display: block;
-        animation: slideUp 6s infinite;
+        animation: slideUp 5s 2s infinite;
     }
 
     /* buttons */
@@ -79,7 +80,6 @@ section.hero {
             width: 100%;
             height: 100%;
             position: relative;
-            border: 2px solid black;
         }
 
         & img {
@@ -91,22 +91,35 @@ section.hero {
             width: 94%;
             top: 3%;
             left: 3%;
+
+            transform: translateX(200%);
+            animation: slideIn 3s 200ms ease forwards;
         }
 
         & img[src*="patins"] {
             z-index: 1;
+
+            transform: translateX(200%);
+            animation: slideIn 3s ease forwards;
         }
 
         & img[src*="stars-1"] {
             max-width: 5.5rem;
             z-index: 0;
             top: 30%;
+
+            opacity: 0;
+            transform: translateX(400%);
+            animation: slideIn 2s 800ms ease both, appear 100ms 800ms ease both;
         }
 
         & img[src*="stars-2"] {
             max-width: 2.5rem;
             bottom: 35%;
             right: 0;
+
+            transform: translateX(400%);
+            animation: slideIn 2.2s 800ms ease both;
         }
     }
 }
@@ -153,8 +166,18 @@ section.hero {
 
 /* Animação de movimento Y/INLINE */
 @keyframes slideIn {
+    50% {
+        transform: translateX(-20px);
+    }
+
     100% {
-        transform: ;
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
     }
 }
 
@@ -162,6 +185,8 @@ section.hero {
     section.hero {
         max-width: 22rem;
         padding: 1rem var(--px-base);
+
+        flex-wrap: wrap-reverse;
         
         & h1 div {
             height: 2.5rem;
@@ -171,6 +196,20 @@ section.hero {
             flex-wrap: wrap-reverse;
             justify-content: start;
             gap: 1.5rem;
+        }
+
+        &>div:nth-child(2) {
+            height: 22rem;
+
+            & img[src*="stars-1"] {
+                max-width: 3.5rem;
+                top: 25%;
+            }
+
+            & img[src*="stars-2"] {
+                max-width: 1.5rem;
+                bottom: 44%;
+            }
         }
     }
     
