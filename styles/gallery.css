@@ -1,0 +1,18 @@
+section.gallery {
+  width: 100%;
+  max-width: 80rem;
+  padding: 2.5rem var(--px-base) var(--px-base) var(--px-base);
+
+  margin-inline: auto;
+
+  header {
+    text-align: center;
+  }
+}
+
+@media (width <= 80em) {
+  section.gallery {
+    max-width: 22rem;
+    padding: var(--px-base);
+  }
+}
