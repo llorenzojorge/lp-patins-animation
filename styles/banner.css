@@ -43,6 +43,7 @@
 
 @media (width <= 80rem) {
   .banner {
+    padding-block: 1.5rem;
     & .bg-gradient-animate {
       animation: bg-gradient 10s ease infinite;
     }
